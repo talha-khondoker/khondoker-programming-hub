@@ -150,6 +150,21 @@
             margin: 10px 0;
         }
 
+        /* Logout Button */
+        .logout-btn {
+            background-color: #e63946; /* Logout button color */
+            color: white; /* Logout button text color */
+            padding: 10px 20px; /* Padding for logout button */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer on hover */
+            font-size: 16px; /* Button font size */
+            transition: background-color 0.2s ease; /* Transition for hover effect */
+        }
+
+        .logout-btn:hover {
+            background-color: #d62839; /* Darker red on hover */
+        }
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -198,11 +213,12 @@
         <h1>Khondoker Programming Hub</h1>
         <!-- <h1>C Programming</h1> -->
         <div class="navbar-right">
-            <a href="index.html" class="navbar-button">Home</a> <!-- Home Button -->
+            <!-- <a href="index.html" class="navbar-button">Home</a> Home Button -->
             <a href="dashboard.html">Dashboard</a>
             <a href="support.html" class="navbar-button">Support</a>
             <a href="my-class.html" class="navbar-button">My Class</a>
             <a href="user-profile.html">Profile</a>
+            <button class="logout-btn" onclick="logout()">Logout</button>
         </div>
     </div>
 
@@ -223,6 +239,7 @@
             <!-- Add more videos as needed -->
         </ul>
         <!-- Add more modules as needed -->
+        <button class="logout-btn" onclick="logout()">Logout</button>
     </div>
 
     <!-- Footer -->
@@ -250,5 +267,14 @@
         </div>
         <p>&copy; 2024 Khondoker Programming Hub. All rights reserved.</p>
     </div>
+
+    <!-- Script for Logout -->
+    <script>
+        function logout() {
+            localStorage.removeItem('loggedIn'); // Clear the login status
+            window.location.href = 'update-login.html'; // Redirect to login page
+        }
+    </script>
+
 </body>
 </html>
