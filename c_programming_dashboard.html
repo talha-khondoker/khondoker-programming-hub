@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e7f0f7; /* Light background for the body */
+            color: #444; /* Dark text color */
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #005f73; /* Dark teal for the navbar */
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Shadow for navbar */
+        }
+
+        .navbar h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .navbar-right a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.2s ease; /* Transition for hover effect */
+        }
+
+        .navbar-right a:hover {
+            color: #0a9396; /* Lighter teal on hover */
+            transform: translateY(-2px); /* Subtle lift on hover */
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px; /* Max width for the container */
+            margin: 50px auto; /* Center the container */
+            padding: 20px; /* Padding inside the container */
+            background-color: #ffffff; /* White background for container */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Light shadow */
+        }
+
+        h2 {
+            font-size: 26px; /* Header size */
+            margin-bottom: 15px; /* Space below the header */
+            color: #005f73; /* Dark teal for headers */
+            border-bottom: 2px solid #0a9396; /* Underline with color */
+            padding-bottom: 5px; /* Padding below header */
+        }
+
+        .module {
+            margin-bottom: 20px; /* Space below each module */
+        }
+
+        .video-links {
+            list-style: none; /* Remove bullet points */
+            padding: 0; /* Remove padding */
+        }
+
+        .video-links li {
+            background-color: #f1f1f1; /* Light gray background for video links */
+            padding: 15px; /* Padding for each link */
+            margin-bottom: 10px; /* Space below each link */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .video-links li:hover {
+            transform: translateY(-2px); /* Lift effect on hover */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+        }
+
+        .video-links a {
+            text-decoration: none; /* No underline for links */
+            font-weight: 600; /* Bold font */
+            color: #005f73; /* Link color */
+            transition: color 0.2s ease;
+        }
+
+        .video-links a:hover {
+            color: #0a9396; /* Lighter teal on hover */
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #003366;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex: 1;
+            margin: 10px;
+        }
+
+        .footer-column a {
+            color: #00c0f0;
+            text-decoration: none;
+        }
+
+        .footer-column a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-column h3 {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .footer p {
+            margin: 10px 0;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar-right {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .navbar h1 {
+                font-size: 22px; /* Smaller font size for navbar title */
+            }
+
+            .navbar-right a {
+                margin-right: 10px;
+                margin-bottom: 10px;
+            }
+
+            h2 {
+                font-size: 22px; /* Smaller header size */
+            }
+
+            .container {
+                margin: 20px 10px; /* Reduced margin for mobile */
+                padding: 15px; /* Adjust padding for smaller screens */
+            }
+
+            .video-links li {
+                padding: 12px; /* Smaller padding for video links */
+            }
+
+            .footer {
+                font-size: 12px; /* Smaller footer text */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>Khondoker Programming Hub</h1>
+        <!-- <h1>C Programming</h1> -->
+        <div class="navbar-right">
+            <a href="index.html" class="navbar-button">Home</a> <!-- Home Button -->
+            <a href="dashboard.html">Dashboard</a>
+            <a href="support.html" class="navbar-button">Support</a>
+            <a href="my-class.html" class="navbar-button">My Class</a>
+            <a href="user-profile.html">Profile</a>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <h2>C Programming</h2>
+        <h2>Module 1</h2>
+        <ul class="video-links">
+            <li><a href="https://www.youtube.com/watch?v=example1" target="_blank">Video 1: Introduction to C</a></li>
+            <li><a href="https://www.youtube.com/watch?v=example2" target="_blank">Video 2: Variables and Data Types</a></li>
+            <!-- Add more videos as needed -->
+        </ul>
+
+        <h2>Module 2</h2>
+        <ul class="video-links">
+            <li><a href="https://www.youtube.com/watch?v=example3" target="_blank">Video 3: Control Structures</a></li>
+            <li><a href="https://www.youtube.com/watch?v=example4" target="_blank">Video 4: Functions in C</a></li>
+            <!-- Add more videos as needed -->
+        </ul>
+        <!-- Add more modules as needed -->
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:khondoker.t4@gmail.com">khondoker-programming-hub.support</a></p>
+                <p>Phone: <a href="tel:+8801580388813">+8801580388813 (WhatsApp)</a></p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="#">About Us</a><br>
+                <a href="#">Courses</a><br>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2024 Khondoker Programming Hub. All rights reserved.</p>
+    </div>
+</body>
+</html>

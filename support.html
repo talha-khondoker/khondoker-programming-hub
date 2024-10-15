@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e7f0f7; /* Light background */
+            color: #444; /* Dark text color */
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #005f73; /* Dark teal for the navbar */
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Shadow for navbar */
+        }
+
+        .navbar h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-right a {
+            color: white; /* Text color for navbar buttons */
+            text-decoration: none; /* Remove underline */
+            margin-right: 20px; /* Space between buttons */
+            font-weight: 600; /* Font weight for buttons */
+            transition: color 0.3s ease, transform 0.2s ease; /* Transition for hover effect */
+        }
+
+        .navbar-right a:hover {
+            color: #0a9396; /* Lighter teal on hover */
+            transform: translateY(-2px); /* Subtle lift on hover */
+        }
+
+        /* Main Container */
+        .container {
+            padding: 50px;
+            max-width: 1200px; /* Increased width for consistency with my-class.html */
+            margin: 20px auto; /* Centered margin */
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #005f73;
+            text-align: center;
+            border-bottom: 2px solid #0a9396;
+            padding-bottom: 5px;
+        }
+
+        .button-group {
+            margin-top: 30px;
+        }
+
+        .support-button {
+            background-color: #0a9396;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 18px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .support-button:hover {
+            background-color: #003d5b;
+            transform: translateY(-2px);
+        }
+
+        /* Module Cards */
+        .module {
+            margin-bottom: 40px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .module ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .module ul li {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #666;
+            background-color: #f1f1f1;
+            padding: 15px;
+            border-radius: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .module ul li:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .module ul li::before {
+            content: "✔";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover, .close:focus {
+            color: black;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #003366;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex: 1;
+            margin: 10px;
+        }
+
+        .footer-column a {
+            color: #00c0f0;
+            text-decoration: none;
+        }
+
+        .footer-column a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-column h3 {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .footer p {
+            margin: 10px 0;
+        }
+
+        /* Logout Button */
+        .logout-btn {
+            background-color: #e63946; /* Logout button color */
+            color: white; /* Logout button text color */
+            padding: 10px 20px; /* Padding for logout button */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer on hover */
+            font-size: 16px; /* Button font size */
+            transition: background-color 0.2s ease; /* Transition for hover effect */
+        }
+
+        .logout-btn:hover {
+            background-color: #d62839; /* Darker red on hover */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar h1 {
+                font-size: 20px; /* Smaller font size for mobile */
+            }
+
+            .navbar-right a {
+                font-size: 14px; /* Smaller text size for navbar links */
+                margin-right: 10px; /* Adjust spacing between links */
+            }
+
+            .container h2 {
+                font-size: 24px; /* Smaller header size */
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .support-button {
+                padding: 12px 20px;
+                font-size: 16px; /* Adjust button size for mobile */
+            }
+
+            .modal-content {
+                width: 90%; /* Wider modal for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container h2 {
+                font-size: 22px; /* Further reduce header size */
+            }
+
+            .support-button {
+                font-size: 14px; /* Smaller font for mobile buttons */
+            }
+
+            .navbar-right {
+                flex-direction: column;
+            }
+
+            .logout-btn {
+                padding: 8px 15px; /* Smaller padding for logout button */
+                font-size: 14px; /* Smaller button font size */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>Khondoker Programming Hub</h1>
+        <div class="navbar-right">
+            <!-- <a href="index.html" class="navbar-button">Home</a> -->
+            <a href="dashboard.html" class="navbar-button">Dashboard</a>
+            <a href="my-class.html" class="navbar-button">My Class</a>
+            <a href="user-profile.html" class="navbar-button">Profile</a>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2>Contact Us or Join Us Using the Following Options</h2>
+
+        <h2>Live Class Schedule</h2>
+        <div class="module">
+            <ul>
+                <li>Prograssing - Will update soon</li>
+                <li>Prograssing - Will update soon</li>
+                <li>Prograssing - Will update soon</li>
+            </ul>
+        </div>
+
+        <div class="button-group">
+            <a href="#" class="support-button" id="zoomBtn">Zoom</a>
+            <a href="#" class="support-button" id="meetBtn">Google Meet</a>
+            <a href="mailto:khondoker.t4@gmail.com" class="support-button">Gmail</a>
+            <a href="tel:+8801580388813" class="support-button">WhatsApp</a>
+            <a href="https://discord.gg/your-discord-link" target="_blank" class="support-button">Discord</a>
+            <a href="https://forms.gle/2gC3ccFwHnZueivr9" target="_blank" class="support-button">Ask Question</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:khondoker.t4@gmail.com">khondoker-programming-hub.support</a></p>
+                <p>Phone: <a href="tel:+8801580388813">+8801580388813 (WhatsApp)</a></p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="#">About Us</a><br>
+                <a href="#">Courses</a><br>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2024 Khondoker Programming Hub. All rights reserved.</p>
+    </div>
+
+    <script>
+        // Get the modal elements
+        var zoomModal = document.getElementById('zoomModal');
+        var meetModal = document.getElementById('meetModal');
+
+        // Get the button that opens the modals
+        var zoomBtn = document.getElementById('zoomBtn');
+        var meetBtn = document.getElementById('meetBtn');
+
+        // Get the <span> element that closes the modals
+        var zoomClose = document.getElementById('zoomClose');
+        var meetClose = document.getElementById('meetClose');
+
+        // When the user clicks the button, open the modals
+        zoomBtn.onclick = function() {
+            zoomModal.style.display = 'block';
+        }
+        meetBtn.onclick = function() {
+            meetModal.style.display = 'block';
+        }
+
+        // When the user clicks on <span> (x), close the modals
+        zoomClose.onclick = function() {
+            zoomModal.style.display = 'none';
+        }
+        meetClose.onclick = function() {
+            meetModal.style.display = 'none';
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == zoomModal) {
+                zoomModal.style.display = 'none';
+            }
+            if (event.target == meetModal) {
+                meetModal.style.display = 'none';
+            }
+        }
+    </script>
+
+    <!-- Script for Logout -->
+    <script>
+        function logout() {
+            localStorage.removeItem('loggedIn'); // Clear the login status
+            window.location.href = 'update-login.html'; // Redirect to login page
+        }
+    </script>
+
+</body>
+</html>

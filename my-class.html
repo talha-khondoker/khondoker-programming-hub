@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Class Schedule</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e7f0f7;
+            color: #444;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #005f73;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-right a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .navbar-right a:hover {
+            color: #0a9396;
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        .container {
+            padding: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #005f73;
+            text-align: center;
+            border-bottom: 2px solid #0a9396;
+            padding-bottom: 5px;
+        }
+
+        /* Module Cards */
+        .module {
+            margin-bottom: 40px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .module ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .module ul li {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #666;
+            background-color: #f1f1f1;
+            padding: 15px;
+            border-radius: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .module ul li:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .module ul li::before {
+            content: "✔";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Links for Zoom, Meet, and Exams */
+        .link-box {
+            background-color: #0a9396;
+            padding: 15px 30px;
+            margin: 10px 0;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .link-box:hover {
+            background-color: #003d5b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #003366;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex: 1;
+            margin: 10px;
+        }
+
+        .footer-column a {
+            color: #00c0f0;
+            text-decoration: none;
+        }
+
+        .footer-column a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-column h3 {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .footer p {
+            margin: 10px 0;
+        }
+
+        /* Logout Button */
+        .logout-btn {
+            background-color: #e63946; /* Logout button color */
+            color: white; /* Logout button text color */
+            padding: 10px 20px; /* Padding for logout button */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer on hover */
+            font-size: 16px; /* Button font size */
+            transition: background-color 0.2s ease; /* Transition for hover effect */
+        }
+
+        .logout-btn:hover {
+            background-color: #d62839; /* Darker red on hover */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+            }
+
+            .navbar-right {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar-right a {
+                margin: 10px 0;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .container h2 {
+                font-size: 26px;
+            }
+
+            .module ul li {
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar h1 {
+                font-size: 20px;
+            }
+
+            .navbar-right a {
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            .module h3 {
+                font-size: 20px;
+            }
+
+            .module ul li {
+                font-size: 16px;
+            }
+
+            .logout-btn {
+                padding: 8px 15px; /* Smaller padding for logout button */
+                font-size: 14px; /* Smaller button font size */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <!-- <h1>My Class Schedule</h1> -->
+        <h1>Khondoker Programming Hub</h1>
+        <div class="navbar-right">
+            <!-- <a href="index.html">Home</a> -->
+            <a href="dashboard.html">Dashboard</a>
+            <a href="support.html">Support</a>
+            <a href="user-profile.html">Profile</a>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2>My Class Schedule</h2>
+        <h2>Live Class Schedule</h2>
+        <div class="module">
+            <ul>
+                <li>Prograssing - Will update soon</li>
+                <li>Prograssing - Will update soon</li>
+                <li>Prograssing - Will update soon</li>
+            </ul>
+            <a href="https://zoom.us/your-zoom-link" target="_blank" class="link-box">Zoom Link</a>
+            <a href="https://meet.google.com/your-meet-link" target="_blank" class="link-box">Google Meet Link</a>
+        </div>
+
+        <h2>Recorded Class Schedule</h2>
+        <div class="module">
+            <ul>
+                <li>Prograssing - Will update soon</li>
+                <li>Prograssing - Will update soon</li>
+                <li>Prograssing - Will update soon</li>
+            </ul>
+        </div>
+
+        <h2>Practice Schedule</h2>
+        <div class="module">
+            <ul>
+                <li>Prograssing - Will update soon</li>
+                <li>Prograssing - Will update soon</li>
+                <li>Prograssing - Will update soon</li>
+            </ul>
+            <a href="https://practice-link-1.com" target="_blank" class="link-box">Practice Link 1</a>
+            <a href="https://practice-link-2.com" target="_blank" class="link-box">Practice Link 2</a>
+            <a href="https://practice-link-3.com" target="_blank" class="link-box">Practice Link 3</a>
+        </div>
+
+        <h2>Exam Schedule</h2>
+        <div class="module">
+            <ul>
+                <li>Prograssing - Will update soon</li>
+                <li>Prograssing - Will update soon</li>
+                <li>Prograssing - Will update soon</li>
+            </ul>
+            <a href="https://exam-link-1.com" target="_blank" class="link-box">Exam Link 1</a>
+            <a href="https://exam-link-2.com" target="_blank" class="link-box">Exam Link 2</a>
+            <a href="https://exam-link-3.com" target="_blank" class="link-box">Exam Link 3</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:khondoker.t4@gmail.com">khondoker-programming-hub.support</a></p>
+                <p>Phone: <a href="tel:+8801580388813">+8801580388813 (WhatsApp)</a></p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="#">About Us</a><br>
+                <a href="#">Courses</a><br>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2024 Khondoker Programming Hub. All rights reserved.</p>
+    </div>
+
+<!-- Script for Logout -->
+<script>
+    function logout() {
+        localStorage.removeItem('loggedIn'); // Clear the login status
+        window.location.href = 'update-login.html'; // Redirect to login page
+    }
+</script>
+
+</body>
+
+</html>

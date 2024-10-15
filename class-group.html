@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration and Payment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e7f0f7; /* Light background */
+            color: #444; /* Dark text color */
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #005f73; /* Dark teal */
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-right a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .navbar-right a:hover {
+            color: #0a9396;
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        .container {
+            padding: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #005f73;
+            text-align: center;
+            border-bottom: 2px solid #0a9396;
+            padding-bottom: 5px;
+        }
+
+        /* Module Cards */
+        .module {
+            margin-bottom: 40px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .module ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .module ul li {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #666;
+            background-color: #f1f1f1;
+            padding: 15px;
+            border-radius: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .module ul li:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .module ul li::before {
+            content: "✔";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #003366;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex: 1;
+            margin: 10px;
+        }
+
+        .footer-column a {
+            color: #00c0f0;
+            text-decoration: none;
+        }
+
+        .footer-column a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-column h3 {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .footer p {
+            margin: 10px 0;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+            }
+
+            .navbar-right {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar-right a {
+                margin: 10px 0;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .container h2 {
+                font-size: 26px;
+            }
+
+            .module ul li {
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar h1 {
+                font-size: 20px;
+            }
+
+            .navbar-right a {
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            .module h3 {
+                font-size: 20px;
+            }
+
+            .module ul li {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <!-- <h1>Group Class And Payment Information</h1> -->
+        <h1>Khondoker Programming Hub</h1>
+        <div class="navbar-right">
+            <a href="index.html">Home</a>
+            <a href="https://forms.gle/2gC3ccFwHnZueivr9" target="_blank">Registration</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2>Group Class And Payment Information</h2>
+        <h2>Course Fee</h2>
+        <div class="module">
+            <ul>
+                <li>C Programming -- 2000 BDT or $17 USD</li>
+                <li>C++ for DSA and Algorithm -- 4000 BDT or $34 USD</li>
+                <li>Competitive Programming Course -- 3000 BDT or $25 USD</li>
+                <li>All Courses -- 7000 BDT or $59 USD</li>
+            </ul>
+        </div>
+
+        <h2>Course Duration</h2>
+        <div class="module">
+            <ul>
+                <li>C Programming -- 1 Month</li>
+                <li>C++ for DSA and Algorithm -- 2 Months</li>
+                <li>Competitive Programming Course -- 3 Months</li>
+                <li>All Courses -- 6 Months</li>
+            </ul>
+        </div>
+
+        <h2>**If the course is not completed within the specified time, the time will be extended**</h2>
+
+        <h2>Class Schedule</h2>
+        <div class="module">
+            <ul>
+                <li>Classes will start from January 2025.</li>
+                <li>Three live or recorded classes per week.</li>
+                <li>Three practice days per week.</li>
+                <li>The 7th day is exam day.</li>
+                <li>Minimum 1 hour, up to 2 hours of class and support.</li>
+                <li>Solve more than 800+ problems from Codeforces, CodeChef, Leetcode, and others.</li>
+                <li>Full-time support.</li>
+            </ul>
+        </div>
+
+        <h2>Important Guide</h2>
+        <div class="module">
+            <ul>
+                <li>After registration and payment, you will be given access to all classes and groups (WhatsApp & Discord) via email.</li>
+                <li>Please ensure that your payment details are correct and complete the sign-up process to secure your spot in the course.</li>
+                <li>At the time of registration, you will need to provide the payment transaction number, so make sure to save it.</li>
+            </ul>
+        </div>
+
+        <h2>Payment Details</h2>
+        <div class="module">
+            <ul>
+                <li>Please make your payment using one of the following methods:</li>
+                <li><strong>Bkash:</strong> Send money to 0186701845</li>
+                <li><strong>Rocket:</strong> Send money to 01867051845</li>
+                <li>For Bank account, Visa, or MasterCard payments, contact us on WhatsApp: <strong>+8801580388813</strong></li>
+            </ul>
+        </div>
+
+        <h2>Click On Registration</h2>
+        <div class="module">
+            <ul>
+                <li>After making the payment, you must sign up for the course using the following link:</li>
+                <li><a href="https://forms.gle/2gC3ccFwHnZueivr9" target="_blank" class="registration-button">Registration Link</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:khondoker.t4@gmail.com">khondoker-programming-hub.support</a></p>
+                <p>Phone: <a href="tel:+8801580388813">+8801580388813 (WhatsApp)</a></p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="#">About Us</a><br>
+                <a href="#">Courses</a><br>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2024 Khondoker Programming Hub. All rights reserved.</p>
+    </div>
+
+</body>
+</html>

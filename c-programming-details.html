@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming Course</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e7f0f7; /* Light background for the body */
+            color: #444; /* Dark text color */
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #005f73; /* Dark teal for the navbar */
+            color: white;
+            padding: 20px 40px; /* Increased padding for better spacing */
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping of items */
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Shadow for navbar */
+        }
+
+        .navbar h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-right a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.2s ease; /* Transition for hover effect */
+        }
+
+        .navbar-right a:hover {
+            color: #0a9396; /* Lighter teal on hover */
+            transform: translateY(-2px); /* Subtle lift on hover */
+        }
+
+        /* Container */
+        .container {
+            padding: 50px;
+            max-width: 1200px; /* Constrained max-width for better readability */
+            margin: 0 auto; /* Centering the container */
+        }
+
+        .container h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #005f73; /* Dark teal for headings */
+            text-align: center; /* Centered heading */
+            border-bottom: 2px solid #0a9396; /* Underline with color */
+            padding-bottom: 5px; /* Padding below header */
+        }
+
+        .module {
+            margin-bottom: 40px; /* Increased space between modules */
+            background-color: white; /* White background for module cards */
+            padding: 20px; /* Padding within module cards */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+        }
+
+        .module h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #005f73; /* Consistent dark teal color for module titles */
+        }
+
+        .module ul {
+            list-style: none; /* Remove bullet points */
+            padding-left: 0;
+        }
+
+        .module ul li {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #666; /* Subtle gray color for text */
+            display: flex;
+            align-items: center;
+            background-color: #f1f1f1; /* Light gray background for video links */
+            padding: 15px; /* Padding for each link */
+            border-radius: 8px; /* Rounded corners */
+            transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transition for hover effect */
+        }
+
+        .module ul li:hover {
+            transform: translateY(-2px); /* Lift effect on hover */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+        }
+
+        .module ul li::before {
+            content: "✔";
+            color: #28a745; /* Green check mark for items */
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #003366;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex: 1;
+            margin: 10px;
+        }
+
+        .footer-column a {
+            color: #00c0f0;
+            text-decoration: none;
+        }
+
+        .footer-column a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-column h3 {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .footer p {
+            margin: 10px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 10px; /* Reduced padding for mobile */
+            }
+
+            .navbar h1 {
+                font-size: 20px; /* Smaller font size for navbar title */
+            }
+
+            .navbar-right a {
+                font-size: 14px; /* Smaller button font */
+                margin-right: 10px; /* Reduced margin */
+            }
+
+            .container h2 {
+                font-size: 24px; /* Smaller header size */
+            }
+
+            .module ul li {
+                padding: 10px; /* Smaller padding for video links */
+                font-size: 16px; /* Smaller font size for links */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>Khondoker Programming Hub</h1>
+        <div class="navbar-right">
+            <a href="index.html" class="navbar-button">Home</a>
+            <a href="need_private.html" class="navbar-button">Need Private Tutor</a>
+            <a href="class-group.html" class="navbar-button">Class in Group</a>
+            <a href="registration-and-payment.html" class="navbar-button">Enroll</a>
+        </div>
+    </div>
+
+    <!-- Course Modules -->
+    <div class="container">
+        <h2>C Programming Course - Topics</h2>
+        <div class="module">
+            <h3>Chapter 1: </h3>
+            <ul>
+                <li>Lecture 1: Introduction to C</li>
+                <li>Lecture 2: Structure of C, compilation, execution</li>
+                <li>Lecture 3: Character set, identifiers, keywords</li>
+                <li>Lecture 4: Constants, variables</li>
+                <li>Lecture 5: Expression, operators</li>
+                <li>Lecture 6: Operators continue...</li>
+                <li>Lecture 7: Loops: do while, while</li>
+                <li>Lecture 8: For loop, break, continue statement</li>
+                <li>Lecture 9: Control Statements</li>
+                <li>Lecture 10: Nesting of if else, if else ladder</li>
+                <li>Lecture 11: Arrays</li>
+                <li>Lecture 12: 2-Dimensional array</li>
+            </ul>
+        </div>
+        <div class="module">
+            <h3>Chapter 2: Under Revision</h3>
+            <ul>
+                <li>Lecture 13: String library functions</li>
+                <li>Lecture 14: Functions, categories</li>
+                <li>Lecture 15: Functions categories cont..</li>
+                <li>Lecture 16: Actual arguments and Formal arguments, call by value, call by reference</li>
+                <li>Lecture 17: Local, global, static variable</li>
+                <li>Lecture 18: Monolithic vs modular programming, Storage classes</li>
+                <li>Lecture 19: Storage class cont.., pointer</li>
+                <li>Lecture 20: Pointer comparison, increment, decrement</li>
+                <li>Lecture 21: Precedence level of pointer, pointer comparison</li>
+                <li>Lecture 22: Pointer to pointer, pointer to structure</li>
+                <li>Lecture 23: Pointer initialization, accessing elements</li>
+            </ul>
+        </div>
+        <div class="module">
+            <h3>Chapter 3: </h3>
+            <ul>
+                <li>Lecture 24: Size of structure, array vs structure, array within structure</li>
+                <li>Lecture 25: Passing structure to function, Nested Structure</li>
+                <li>Lecture 26: Union</li>
+                <li>Lecture 27: Nesting of unions, dynamic memory allocation</li>
+                <li>Lecture 28: Dynamic memory allocation cont..</li>
+                <li>Lecture 29: Dynamic array, file</li>
+                <li>Lecture 30: File operation</li>
+                <li>Lecture 31: File operation on string</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:khondoker.t4@gmail.com">khondoker-programming-hub.support</a></p>
+                <p>Phone: <a href="tel:+8801580388813">+8801580388813 (WhatsApp)</a></p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="#">About Us</a><br>
+                <a href="#">Courses</a><br>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2024 Khondoker Programming Hub. All rights reserved.</p>
+    </div>
+
+</body>
+</html>
